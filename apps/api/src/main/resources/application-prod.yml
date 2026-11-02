@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: ${INTERVIEWIQ_DB_URL}
+    username: ${INTERVIEWIQ_DB_USERNAME}
+    password: ${INTERVIEWIQ_DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: InterviewIqProdPool
+      maximum-pool-size: ${INTERVIEWIQ_DB_POOL_MAX_SIZE:20}
+      minimum-idle: ${INTERVIEWIQ_DB_POOL_MIN_IDLE:5}
+      connection-timeout: ${INTERVIEWIQ_DB_CONNECTION_TIMEOUT_MS:30000}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+
+server:
+  forward-headers-strategy: framework
+  ssl:
+    enabled: ${INTERVIEWIQ_SSL_ENABLED:false}
+
+interviewiq:
+  cors:
+    allowed-origin: ${INTERVIEWIQ_CORS_ALLOWED_ORIGIN}
+  security:
+    jwt-secret: ${INTERVIEWIQ_JWT_SECRET}
+  ai:
+    provider: gemini
+    api-key: ${INTERVIEWIQ_AI_API_KEY}
+    model: ${INTERVIEWIQ_AI_MODEL:gemini-2.5-flash}
+    timeout-seconds: ${INTERVIEWIQ_AI_TIMEOUT_SECONDS:20}
+    max-attempts: ${INTERVIEWIQ_AI_MAX_ATTEMPTS:2}

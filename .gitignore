@@ -1,0 +1,50 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+*.keystore
+*.pem
+*.key
+*.p12
+*.jks
+
+# Frontend build and dependency outputs
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Java / Maven build outputs
+target/
+*.class
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# Test and tool output
+test-results/
+playwright-report/
+allure-results/
+.nyc_output/
+
+# Local infrastructure data
+data/
+mysql-data/
+*.sqlite
+
+# Generated reports and temporary files
+reports/
+tmp/
+temp/

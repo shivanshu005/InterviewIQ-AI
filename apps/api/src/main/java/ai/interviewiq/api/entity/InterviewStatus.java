@@ -1,0 +1,2 @@
+package ai.interviewiq.api.entity;
+public enum InterviewStatus { CREATING, READY, IN_PROGRESS, COMPLETED, FEEDBACK_PENDING, FEEDBACK_AVAILABLE, FAILED_RETRYABLE, CANCELLED }

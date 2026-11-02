@@ -1,0 +1,3 @@
+package ai.interviewiq.api.dto;
+import jakarta.validation.constraints.*; import java.time.Instant;
+public final class AuthDtos { private AuthDtos(){} public record RegisterRequest(@NotBlank @Size(max=120) String displayName,@NotBlank @Email @Size(max=254) String email,@NotBlank @Size(min=12,max=128) String password){} public record LoginRequest(@NotBlank @Email String email,@NotBlank String password){} public record ProfilePatch(@NotBlank @Size(max=120) String displayName){} public record UserResponse(Long id,String email,String displayName,String status,Instant createdAt,Instant updatedAt){} public record AuthResponse(UserResponse user,String accessToken,long expiresIn){} }

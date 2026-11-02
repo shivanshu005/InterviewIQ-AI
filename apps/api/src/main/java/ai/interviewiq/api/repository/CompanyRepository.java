@@ -1,0 +1,1 @@
+package ai.interviewiq.api.repository; import ai.interviewiq.api.entity.Company; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface CompanyRepository extends JpaRepository<Company,Long>{ List<Company> findByIsActiveTrueOrderByNameAsc(); }

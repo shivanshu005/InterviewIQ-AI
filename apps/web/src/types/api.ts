@@ -1,0 +1,13 @@
+export type User = { id:number; email:string; displayName:string; status:string; createdAt:string; updatedAt:string };
+export type AuthResponse = { user:User; accessToken:string; expiresIn:number };
+export type Company = { id:number; code:string; name:string };
+export type JobRole = Company & { category:string };
+export type Difficulty = { id:number; code:string; displayName:string; rankOrder:number };
+export type Question = { id:number; sequenceNumber:number; questionText:string; questionType:string; answered:boolean };
+export type Interview = { id:number; company:Company; jobRole:JobRole; difficultyLevel:Difficulty; template?: Company | null; status:string; questionCount:number; answeredCount:number; createdAt:string; startedAt?:string|null; completedAt?:string|null; questions?:Question[] };
+export type Answer = { questionId:number; answerText:string; inputMethod:string; submittedAt:string };
+export type QuestionFeedback = { questionId:number; score:number; strengths:string[]; improvements:string[]; recommendation:string };
+export type Feedback = { status:string; overallScore:number|null; technicalScore?:number|null; communicationScore?:number|null; confidenceScore?:number|null; overallAssessment:string; strengths:string[]; improvementAreas:string[]; recommendedActions:string[]; questionFeedback:QuestionFeedback[]; generatedAt?:string };
+export type PageResponse<T> = { data:T[]; nextCursor?:string|null; limit:number };
+export type ApiError = { code?:string; message:string; fieldErrors?: { field:string; message:string }[] };
+export type Analytics = { totalInterviews:number; completedInterviews:number; averageScore:number|null; bestScore:number|null; averageTechnicalScore:number|null; averageCommunicationScore:number|null; averageConfidenceScore:number|null; recentPerformance:{interviewId:number;label:string;score:number}[] };

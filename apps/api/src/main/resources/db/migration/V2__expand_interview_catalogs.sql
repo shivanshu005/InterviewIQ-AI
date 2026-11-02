@@ -1,0 +1,12 @@
+-- Practice categories only; these names do not imply company endorsement or official assessments.
+INSERT INTO companies (code, name, website_url, created_by, updated_by) VALUES
+('GOOGLE','Google','https://about.google/',NULL,NULL),('AMAZON','Amazon','https://www.aboutamazon.com/',NULL,NULL),('MICROSOFT','Microsoft','https://www.microsoft.com/',NULL,NULL),('META','Meta','https://about.meta.com/',NULL,NULL),('APPLE','Apple','https://www.apple.com/',NULL,NULL),('NETFLIX','Netflix','https://about.netflix.com/',NULL,NULL),('TCS','TCS','https://www.tcs.com/',NULL,NULL),('INFOSYS','Infosys','https://www.infosys.com/',NULL,NULL),('WIPRO','Wipro','https://www.wipro.com/',NULL,NULL),('ACCENTURE','Accenture','https://www.accenture.com/',NULL,NULL),('DELOITTE','Deloitte','https://www.deloitte.com/',NULL,NULL),('IBM','IBM','https://www.ibm.com/',NULL,NULL),('CAPGEMINI','Capgemini','https://www.capgemini.com/',NULL,NULL)
+ON DUPLICATE KEY UPDATE name=VALUES(name), website_url=VALUES(website_url), is_active=TRUE, updated_at=CURRENT_TIMESTAMP(6);
+
+INSERT INTO job_roles (code, name, category, created_by, updated_by) VALUES
+('SOFTWARE_ENGINEER','Software Engineer','Engineering',NULL,NULL),('JAVA_DEVELOPER','Java Developer','Engineering',NULL,NULL),('PYTHON_DEVELOPER','Python Developer','Engineering',NULL,NULL),('FRONTEND_DEVELOPER','Frontend Developer','Engineering',NULL,NULL),('BACKEND_DEVELOPER','Backend Developer','Engineering',NULL,NULL),('FULL_STACK_DEVELOPER','Full Stack Developer','Engineering',NULL,NULL),('DATA_ANALYST','Data Analyst','Data',NULL,NULL),('DATA_SCIENTIST','Data Scientist','Data',NULL,NULL),('MACHINE_LEARNING_ENGINEER','Machine Learning Engineer','Data',NULL,NULL),('DEVOPS_ENGINEER','DevOps Engineer','Infrastructure',NULL,NULL),('CLOUD_ENGINEER','Cloud Engineer','Infrastructure',NULL,NULL),('CYBERSECURITY_ANALYST','Cybersecurity Analyst','Security',NULL,NULL),('DATABASE_DEVELOPER','Database Developer','Engineering',NULL,NULL),('QA_ENGINEER','QA Engineer','Engineering',NULL,NULL),('BUSINESS_ANALYST','Business Analyst','Business',NULL,NULL)
+ON DUPLICATE KEY UPDATE name=VALUES(name), category=VALUES(category), is_active=TRUE, updated_at=CURRENT_TIMESTAMP(6);
+
+INSERT INTO difficulty_levels (code, display_name, rank_order, created_by, updated_by) VALUES
+('EASY','Easy',1,NULL,NULL),('MEDIUM','Medium',2,NULL,NULL),('HARD','Hard',3,NULL,NULL),('EXPERT','Expert',4,NULL,NULL)
+ON DUPLICATE KEY UPDATE display_name=VALUES(display_name), rank_order=VALUES(rank_order), is_active=TRUE, updated_at=CURRENT_TIMESTAMP(6);

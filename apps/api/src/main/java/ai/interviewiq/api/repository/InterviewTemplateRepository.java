@@ -1,0 +1,1 @@
+package ai.interviewiq.api.repository; import ai.interviewiq.api.entity.InterviewTemplate; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface InterviewTemplateRepository extends JpaRepository<InterviewTemplate,Long>{ Optional<InterviewTemplate> findFirstByIsActiveTrueOrderByIdAsc(); }

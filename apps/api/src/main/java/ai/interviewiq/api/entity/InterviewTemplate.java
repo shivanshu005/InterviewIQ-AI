@@ -1,0 +1,3 @@
+package ai.interviewiq.api.entity;
+import jakarta.persistence.*;
+@Entity @Table(name="interview_templates") public class InterviewTemplate extends BaseEntity { @Column(nullable=false,unique=true) private String code; @Column(nullable=false) private String name; private byte defaultQuestionCount=5; private boolean isActive=true; protected InterviewTemplate(){} public InterviewTemplate(String c,String n,int q){code=c;name=n;defaultQuestionCount=(byte)q;} public String getCode(){return code;} public String getName(){return name;} public int getDefaultQuestionCount(){return defaultQuestionCount;} public boolean isActive(){return isActive;} }

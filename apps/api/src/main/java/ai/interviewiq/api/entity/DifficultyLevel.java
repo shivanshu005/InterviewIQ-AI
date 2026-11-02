@@ -1,0 +1,3 @@
+package ai.interviewiq.api.entity;
+import jakarta.persistence.*;
+@Entity @Table(name="difficulty_levels") public class DifficultyLevel extends BaseEntity { @Column(nullable=false,unique=true) private String code; @Column(nullable=false) private String displayName; @Column(nullable=false) private byte rankOrder; private boolean isActive=true; protected DifficultyLevel(){} public DifficultyLevel(String c,String n,int r){code=c;displayName=n;rankOrder=(byte)r;} public String getCode(){return code;} public String getDisplayName(){return displayName;} public int getRankOrder(){return rankOrder;} public boolean isActive(){return isActive;} }

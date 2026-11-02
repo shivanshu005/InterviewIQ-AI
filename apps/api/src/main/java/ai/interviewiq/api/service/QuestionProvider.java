@@ -1,0 +1,1 @@
+package ai.interviewiq.api.service; import ai.interviewiq.api.entity.*; import java.util.*; public interface QuestionProvider { List<String> generate(Company company,JobRole role,DifficultyLevel difficulty,InterviewTemplate template); }

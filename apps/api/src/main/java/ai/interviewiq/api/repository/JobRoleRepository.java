@@ -1,0 +1,1 @@
+package ai.interviewiq.api.repository; import ai.interviewiq.api.entity.JobRole; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface JobRoleRepository extends JpaRepository<JobRole,Long>{ List<JobRole> findByIsActiveTrueOrderByNameAsc(); }

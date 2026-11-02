@@ -1,0 +1,25 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: interviewiq-mysql-dev
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: interviewiq
+      MYSQL_USER: interviewiq
+      MYSQL_PASSWORD: interviewiq_dev_password
+      MYSQL_ROOT_PASSWORD: interviewiq_dev_root_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - interviewiq_mysql_dev_data:/var/lib/mysql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h localhost -u interviewiq -pinterviewiq_dev_password
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 20s
+
+volumes:
+  interviewiq_mysql_dev_data:

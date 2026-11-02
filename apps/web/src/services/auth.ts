@@ -1,0 +1,2 @@
+import { api } from './client'; import type { AuthResponse, User } from '@/types/api';
+export const authApi={ register:(data:{displayName:string;email:string;password:string})=>api.post<AuthResponse>('/auth/register',data).then(r=>r.data), login:(data:{email:string;password:string})=>api.post<AuthResponse>('/auth/login',data).then(r=>r.data), logout:()=>api.post('/auth/logout'), me:()=>api.get<User>('/users/me').then(r=>r.data), updateProfile:(displayName:string)=>api.patch<User>('/users/me',{displayName}).then(r=>r.data) };

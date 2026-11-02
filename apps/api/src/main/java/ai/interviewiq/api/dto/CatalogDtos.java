@@ -1,0 +1,2 @@
+package ai.interviewiq.api.dto;
+public final class CatalogDtos { private CatalogDtos(){} public record CompanyResponse(Long id,String code,String name){} public record JobRoleResponse(Long id,String code,String name,String category){} public record DifficultyResponse(Long id,String code,String displayName,int rankOrder){} public record TemplateResponse(Long id,String code,String name,int defaultQuestionCount){} }

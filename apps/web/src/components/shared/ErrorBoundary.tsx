@@ -1,0 +1,4 @@
+import { Component, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+type Props={children:ReactNode}; type State={failed:boolean};
+export class ErrorBoundary extends Component<Props,State>{state:State={failed:false};static getDerivedStateFromError(){return {failed:true};}componentDidCatch():void{}render(){if(!this.state.failed)return this.props.children;return <main className="mx-auto flex min-h-screen max-w-lg items-center p-6"><section className="card w-full text-center"><h1 className="text-xl font-semibold">Something went wrong</h1><p className="mt-3 text-sm text-zinc-400">Please reload the page or return to your dashboard.</p><div className="mt-6 flex justify-center gap-3"><button className="btn-secondary" onClick={()=>window.location.reload()}>Reload</button><Link className="btn-primary" to="/dashboard" onClick={()=>this.setState({failed:false})}>Dashboard</Link></div></section></main>;}}

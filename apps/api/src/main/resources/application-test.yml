@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:interviewiq;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: false
+
+interviewiq:
+  ai:
+    provider: deterministic
+    model: test-model
+    timeout-seconds: 1
+    max-attempts: 1
+  security:
+    jwt-secret: ${INTERVIEWIQ_JWT_SECRET:test-only-placeholder-secret-with-32-bytes}

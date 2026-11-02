@@ -1,0 +1,1 @@
+package ai.interviewiq.api.repository; import ai.interviewiq.api.entity.DifficultyLevel; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface DifficultyLevelRepository extends JpaRepository<DifficultyLevel,Long>{ List<DifficultyLevel> findByIsActiveTrueOrderByRankOrderAsc(); }
